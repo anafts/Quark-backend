@@ -1,6 +1,7 @@
 const express = require('express');
 const UserController = require('./controllers/UserController');
 const SkillController = require('./controllers/SkillController');
+const TopicsController = require('./controllers/TopicsController');
 
 const routes = express.Router();
 
@@ -13,7 +14,11 @@ routes.get('/skills', SkillController.listSkill );
 routes.put('/updateSkill/:id', SkillController.updateSkill );
 routes.post('/createSkill', SkillController.createSkill );
 
+// topicos routes
 
+routes.get('/topics', TopicsController.listTopics );
+routes.put('/updateTopics/:id', TopicsController.updateTopics );
+routes.post('/createTopics/:skillId', TopicsController.createTopics );
 
 
 
