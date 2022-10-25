@@ -32,6 +32,6 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
   
-    return knex.schema.dropTable('topics') ;
+    return knex.schema.dropTable('topics');
 
 };
