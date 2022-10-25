@@ -2,6 +2,7 @@ const express = require('express');
 const UserController = require('./controllers/UserController');
 const SkillController = require('./controllers/SkillController');
 const TopicsController = require('./controllers/TopicsController');
+const SubTopicsController = require('./controllers/SubTopicsController');
 
 const routes = express.Router();
 
@@ -20,6 +21,10 @@ routes.get('/topics', TopicsController.listTopics );
 routes.put('/updateTopics/:id', TopicsController.updateTopics );
 routes.post('/createTopics/:skillId', TopicsController.createTopics );
 
+// subtopicos routes
 
+routes.get('/subtopics', SubTopicsController.listSubTopics );
+routes.put('/updateSubTopics/:id', SubTopicsController.updateSubTopics );
+routes.post('/createSubTopics/:topicsId', SubTopicsController.createSubTopics );
 
 module.exports = routes;
