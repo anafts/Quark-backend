@@ -20,17 +20,23 @@ module.exports = {
 
     async updateTopics( req, res, next) {
 
-        const { title, order, active_icon, disabled_icon } = req.body;
+        try {
+            
+            const { title, order, active_icon, disabled_icon } = req.body;
 
-        const { id } = req.params;
+            const { id } = req.params;
 
 
-        await knex('topics')
-        .update({ 'title': title, 'order': order, 'active_icon': active_icon, 'disabled_icon': disabled_icon})
-        .where({ 'id': id });
+            await knex('topics')
+            .update({ 'title': title, 'order': order, 'active_icon': active_icon, 'disabled_icon': disabled_icon})
+            .where({ 'id': id });
 
-        return res.status(200).send()
+            return res.status(200).send()
 
+        } catch (error) {
+            
+            next(error);
+        }
     },
 
     async createTopics( req, res, next) {
@@ -46,7 +52,7 @@ module.exports = {
 
         } catch (error) {
 
-            next(error)
+            next(error);
         }
     }
 
