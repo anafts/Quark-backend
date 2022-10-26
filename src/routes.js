@@ -3,6 +3,7 @@ const UserController = require('./controllers/UserController');
 const SkillController = require('./controllers/SkillController');
 const TopicsController = require('./controllers/TopicsController');
 const SubTopicsController = require('./controllers/SubTopicsController');
+const MethodsController = require('./controllers/MethodsController');
 
 const routes = express.Router();
 
@@ -26,5 +27,11 @@ routes.post('/createTopics/:skillId', TopicsController.createTopics );
 routes.get('/subtopics', SubTopicsController.listSubTopics );
 routes.put('/updateSubTopics/:id', SubTopicsController.updateSubTopics );
 routes.post('/createSubTopics/:topicsId', SubTopicsController.createSubTopics );
+
+// methods routes
+
+routes.get('/methods',MethodsController.listMethods);
+routes.put('/updateMethods/:id', MethodsController.updateMethods );
+routes.post('/createMethods/:subtopicsId',MethodsController.createMethods );
 
 module.exports = routes;
