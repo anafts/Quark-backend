@@ -8,7 +8,7 @@ exports.up = function(knex) {
         
         table.increments('id').primary()
         table.string('title').unique().notNullable()
-        table.string('description').notNullable() 
+        table.string('description', 1000).notNullable() 
         table.string('order').notNullable() 
 
 
@@ -36,3 +36,4 @@ exports.down = function(knex) {
     return knex.schema.dropTable('methods') ;
   
 };
+
