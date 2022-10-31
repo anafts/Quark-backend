@@ -17,19 +17,16 @@ routes.put('/updateSkill/:id', SkillController.updateSkill );
 routes.post('/createSkill', SkillController.createSkill );
 
 // topicos routes
-
 routes.get('/topics', TopicsController.listTopics );
 routes.put('/updateTopics/:id', TopicsController.updateTopics );
 routes.post('/createTopics/:skillId', TopicsController.createTopics );
 
 // subtopicos routes
-
 routes.get('/subtopics', SubTopicsController.listSubTopics );
 routes.put('/updateSubTopics/:id', SubTopicsController.updateSubTopics );
 routes.post('/createSubTopics/:topicsId', SubTopicsController.createSubTopics );
 
 // methods routes
-
 routes.get('/methods',MethodsController.listMethods);
 routes.put('/updateMethods/:id', MethodsController.updateMethods );
 routes.post('/createMethods/:subtopicsId',MethodsController.createMethods );
