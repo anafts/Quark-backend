@@ -11,4 +11,4 @@ app.use(routes);
 
 
 // port 3000 
-app.listen(8000, () => console.log("Server is running"));
+app.listen(80, () => console.log("Server is running"));
