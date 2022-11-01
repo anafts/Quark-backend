@@ -26,7 +26,7 @@ module.exports = {
  
  
          await knex('methods')
-         .update({ 'title': title, 'order': order, 'description':description})
+         .update({ 'title': title, 'order': order, 'description': description })
          .where({ 'id': id });
  
          return res.status(200).send()
@@ -43,10 +43,10 @@ module.exports = {
  
          try {
              
-             const { title, order, description} = req.body;
+             const { title, order, description } = req.body;
  
              await knex('methods')
-             .insert({ title, order, description,subtopicos_id: req.params.subtopicsId })
+             .insert({ title, order, description, subtopics_id: req.params.subtopicsId })
  
              return res.status(200).send("Methods created");
  
