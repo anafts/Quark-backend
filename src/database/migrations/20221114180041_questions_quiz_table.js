@@ -7,8 +7,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('questions', function (table) {
         
         table.increments('id').primary()
-        table.string('question', 1000)
-        table.boolean('alternative')
+        table.string('question', 1000).notNullable()
 
         table.timestamp('created_at').defaultTo(knex.fn.now())
         table.timestamp('updated_at').defaultTo(knex.fn.now())
@@ -19,7 +18,7 @@ exports.up = function(knex) {
         .references('id')
         .inTable('quiz')
         .onDelete('CASCADE')
-
+        
     });
 };
 
