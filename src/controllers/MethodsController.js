@@ -29,7 +29,7 @@ module.exports = {
          .update({ 'title': title, 'order': order, 'description': description })
          .where({ 'id': id });
  
-         return res.status(200).send()
+         return res.status(200).send("Methods created")
          
         } catch (error) {
  
