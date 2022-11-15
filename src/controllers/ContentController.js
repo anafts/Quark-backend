@@ -8,8 +8,10 @@ module.exports = {
 
     async listContent(req, res, next){
         try {
+
             const listContent = await knex('content')
             .select('id', 'text', 'videoURL', 'audioURL','created_at', 'updated_at', 'methods_id');
+
 
             return res.status(200).send(listContent);
             
