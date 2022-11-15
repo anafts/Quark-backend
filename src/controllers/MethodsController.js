@@ -3,6 +3,7 @@ const knex = require('../database');
 module.exports = {
 
     async listMethods(req, res, next){
+
         try {
             const listMethods = await knex('methods')
             .select('id', 'title', 'order', 'description','created_at', 'updated_at', 'subtopics_id');
@@ -29,7 +30,7 @@ module.exports = {
          .update({ 'title': title, 'order': order, 'description': description })
          .where({ 'id': id });
  
-         return res.status(200).send("Methods created")
+         return res.status(200).send("Methods updated")
          
         } catch (error) {
  
