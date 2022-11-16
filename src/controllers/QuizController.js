@@ -6,8 +6,10 @@ module.exports = {
 
         try {
 
-            const listQuizzes = await knex('quiz, questions, answers')
-            .select('id', 'question', 'alternative', 'correct' );
+            const listQuizzes = await knex('quiz')
+            .join('questions', 'questions.quiz_id', 'quiz.id')
+            .join('answers', 'answers.questions_id', 'answers.id' )
+            .select('quiz.id', 'quiz.content_id', 'questions.question', 'questions.id', 'answers.*');
 
             return res.status(200).send(listQuizzes);
             
@@ -17,7 +19,7 @@ module.exports = {
         }
     },
 
-    async updateQuizzes(rez, res, next) {
+    async updateQuizzes(req, res, next) {
 
         try {
 
@@ -25,9 +27,13 @@ module.exports = {
  
             const { id } = req.params;
             
-         await knex('quiz, questions, answers')
-         .update({ 'question': question, 'alternative': alternative, 'correct': correct })
+         await knex('questions')
+         .update({ 'question': question })
          .where({ 'id': id });
+
+         await knex('answers')
+         .update({ 'alternative': alternative, 'correct': correct })
+         where({ 'id': id})
  
          return res.status(200).send("quiz updated");
 
@@ -41,13 +47,19 @@ module.exports = {
     async createQuizzes(req, res, next) {
 
         try {
-            
-            const { question, alternative, correct } = req.body;
+
+            for (const quiz of req.body) {
+
+                const quizzes = await knex('quiz').insert({ content_id: req.params.contentId }).returning('id')
+
+                const question = await knex('questions').insert({ quiz_id: quizzes[0].id, question: quiz.question }).returning('id')
+
+                for (const alternative of quiz.alternatives) {
+                    await knex('answers').insert({ alternative: alternative.value, correct: alternative.correct, questions_id: question[0].id })
+                }
+            }
  
-             await knex('quiz, questions, answers')
-             .insert({ question, alternative, correct, content_id: req.params.contentId })
- 
-             return res.status(200).send("quiz created");
+            return res.status(200).send("quiz created");
  
         } catch (error) {
             
