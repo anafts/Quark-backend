@@ -7,7 +7,11 @@ exports.seed = async function(knex) {
   await knex('answers').del()
   await knex('answers').insert([
     {
-      alternative: "",
+      alternative: "alternative 1",
+      questions_id: 1
+    },
+    {
+      alternative: "alternative 2",
       questions_id: 1
     }
   ]);
