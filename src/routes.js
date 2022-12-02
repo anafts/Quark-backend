@@ -42,7 +42,8 @@ routes.put('/updateContent/:id', upload.fields([{ name: 'video', maxCount: 1 }, 
 routes.post('/createContent/:methodsId', upload.fields([{ name: 'video', maxCount: 1 }, { name: 'audio', maxCount: 1 }]), ContentController.createContent );
 
 // quiz routes 
-routes.get('/quiz', QuizController.listQuizzes);
+routes.get('/quizzes/:contentId', QuizController.listQuizzes);
+routes.get('/quiz/:id', QuizController.listbyQuizId)
 routes.put('/updateQuizzes/:id', QuizController.updateQuizzes );
 routes.post('/createQuizzes/:contentId', QuizController.createQuizzes );
 
