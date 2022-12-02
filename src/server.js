@@ -10,5 +10,5 @@ app.use(express.json());
 app.use(routes);
 
 
-// port 3000 
+// port 80
 app.listen(80, () => console.log("Server is running"));
