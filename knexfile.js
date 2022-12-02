@@ -8,9 +8,9 @@ module.exports = {
     development: {
       client: 'pg',
       connection: {
-        database: "quark",
-        user: "postgres",
-        password: null
+        database: process.env.POSTGRESQL_DATABASE,
+        user: process.env.POSTGRESQL_USER,
+        password: process.env.POSTGRESQL_PASSWORD
       },
 
       migrations: {
