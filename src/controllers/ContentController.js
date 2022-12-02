@@ -1,8 +1,11 @@
 const knex = require('../database');
 const firebase = require('firebase/app')
 const firebaseStorage = require('firebase/storage')
-const app = firebase.initializeApp({ storageBucket: 'gs://quark-25fa0.appspot.com' })
-const storage = firebaseStorage.getStorage(app)
+const app = firebase.initializeApp({ storageBucket: process.env.FIREBASE_KEY });
+const storage = firebaseStorage.getStorage(app);
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 module.exports = {
 
