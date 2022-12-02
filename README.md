@@ -1,3 +1,28 @@
+<h1 align="center"> Quark - backend  </h1>
+
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
+
+  ![happen-quark netlify app_skill_ (1)](https://user-images.githubusercontent.com/106173948/205357178-b56f0e8a-8209-471e-897b-836d046f2fb7.png)
+
+<br><h4 align="center"> 🟢 Status do projeto:  Concluído ✔️   </h4> <br>
+
+## 💻 Sobre o projeto:
+
+O Quark é uma aplicação web desenvolvida para a empresa [Happen](https://www.escolahappen.com.br/) – startup de educação corporativa –  durante a segunda e terceira etapa de residência tecnológica do [Porto digital](https://www.portodigital.org/). 
+
+A aplicação conta com uma interface intuitiva e direta que permite que os diretores ou pessoas que não fazem parte do time de desenvolvimento realizem a inserção de conteúdos no Quark – aplicativo mobile da empresa. Que nasceu como uma solução para a falta de desenvolvimento de habilidades comportamentais nas formações tradicionais. Uma aplicação que busca ensinar essas habilidades através de gamificação, microlearning e múltiplos formatos de conteúdos 
+
+
+<br>
+
+
+
+
 ### 🔧 Como instalar e rodar a aplicação:
 
 ```bash
@@ -16,3 +41,20 @@ $ npm start
 # O servidor inciará na porta:80 - acesse http://localhost:80 
 
 ```
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- JavaScript
+- [Node e NPM](https://nodejs.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Knex](https://knexjs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+## 🚀 Deploy 
+
+Para acessar o link do projeto [clique aqui]()
+
+## 🔖 Layout
+
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/eb3qouqy6JJwoy3ZLVn1Fm/Wireframe-Alta-Fidelidade?node-id=517%3A2&t=SGwlQP0wcVmuJ9a4-1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
