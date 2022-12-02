@@ -3,6 +3,7 @@
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#-deploy">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
@@ -11,17 +12,12 @@
 
 <br><h4 align="center"> 🟢 Status do projeto:  Concluído ✔️   </h4> <br>
 
-## 💻 Sobre o projeto:
+## 💻 Projeto:
 
 O Quark é uma aplicação web desenvolvida para a empresa [Happen](https://www.escolahappen.com.br/) – startup de educação corporativa –  durante a segunda e terceira etapa de residência tecnológica do [Porto digital](https://www.portodigital.org/). 
 
 A aplicação conta com uma interface intuitiva e direta que permite que os diretores ou pessoas que não fazem parte do time de desenvolvimento realizem a inserção de conteúdos no Quark – aplicativo mobile da empresa. Que nasceu como uma solução para a falta de desenvolvimento de habilidades comportamentais nas formações tradicionais. Uma aplicação que busca ensinar essas habilidades através de gamificação, microlearning e múltiplos formatos de conteúdos 
-
-
 <br>
-
-
-
 
 ### 🔧 Como instalar e rodar a aplicação:
 
