@@ -11,4 +11,4 @@ app.use(routes);
 
 
 // port 80
-app.listen(80, () => console.log("Server is running"));
+app.listen(process.env.PORT ?? 80, () => console.log("Server is running"));
