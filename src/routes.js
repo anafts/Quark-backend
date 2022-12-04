@@ -2,7 +2,7 @@ const UserController = require('./controllers/UserController');
 const SkillController = require('./controllers/SkillController');
 const TopicsController = require('./controllers/TopicsController');
 const SubTopicsController = require('./controllers/SubTopicsController');
-const MethodsController = require('./controllers/MethodsController');
+const ModulesController = require('./controllers/ModulesController');
 const ContentController = require('./controllers/ContentController');
 const QuizController = require('./controllers/QuizController');
 
@@ -31,10 +31,10 @@ routes.get('/subtopics', SubTopicsController.listSubTopics);
 routes.put('/updateSubTopics/:id', SubTopicsController.updateSubTopics);
 routes.post('/createSubTopics/:topicsId', SubTopicsController.createSubTopics);
 
-// methods routes
-routes.get('/methods',MethodsController.listMethods);
-routes.put('/updateMethods/:id', MethodsController.updateMethods);
-routes.post('/createMethods/:subtopicsId', MethodsController.createMethods);
+// modules routes
+routes.get('/modules',ModulesController.listModules);
+routes.put('/updateModules/:id', ModulesController.updateModules);
+routes.post('/createModules/:subtopicsId', ModulesController.createModules);
 
 // content routes
 routes.get('/content', ContentController.listContent);
