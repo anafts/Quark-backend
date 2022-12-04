@@ -5,6 +5,7 @@
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex('topics').del()
+  const skill = await knex('skills').first()
   await knex('topics').insert([
 
     {
@@ -12,7 +13,7 @@ exports.seed = async function(knex) {
       order: '1',
       active_icon: '/icons/inteligencia-emocional.svg',
       disabled_icon: '/icons/inteligencia-emocional-desativado.svg',
-      skills_id: 10
+      skills_id: skill.id
     },
 
 

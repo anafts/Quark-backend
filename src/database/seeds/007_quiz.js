@@ -5,9 +5,10 @@
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   await knex('quiz').del()
+  const content = await knex('content').first()
   await knex('quiz').insert([
     {
-      content_id: 1
+      content_id: content.id
     }
   ]);
 };
