@@ -1,5 +1,9 @@
 // Update with your config settings.
 
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
@@ -10,7 +14,7 @@ module.exports = {
       connection: {
         database: process.env.POSTGRESQL_DATABASE,
         user: process.env.POSTGRESQL_USER,
-        password: process.env.POSTGRESQL_PASSWORD
+        password: process.env.POSTGRESQL_PASSWORD,
       },
 
       migrations: {
