@@ -7,7 +7,7 @@ module.exports = {
     async login (req, res, next) {
 
         try {
-            
+
             const { email, password } = req.body;
 
             const user = await knex('users')
@@ -21,11 +21,11 @@ module.exports = {
 
             } else {
 
-                const verifyPassword = await bcrypt.compare(password, user.password);
+                const verifyPassword = await bcrypt.compare(password, user.hash);
 
                 if (!verifyPassword) {
 
-                    return res.status(401).send("Invalid credencial!");
+                    return res.status(401).send("User not found!!");
                 }
                 
                 const token = await jwt.sign(user.email, user.password);
