@@ -12,26 +12,22 @@ module.exports = {
 
             const user = await knex('users')
             .where('email', email)
-            .andWhere('password', password)
             .first()
 
             if (!user) {
-
                 return res.status(404).send("Create a account!");
-
-            } else {
-
-                const verifyPassword = await bcrypt.compare(password, user.hash);
-
-                if (!verifyPassword) {
-
-                    return res.status(401).send("User not found!!");
-                }
-                
-                const token = await jwt.sign(user.email, user.password);
-
-                return res.status(200).send(token);
             }
+
+            const verifyPassword = await bcrypt.compare(password, user.password);
+
+            if (!verifyPassword) {
+
+                return res.status(401).send("User not found!!");
+            }
+            
+            const token = await jwt.sign(user.email, user.password);
+
+            return res.status(200).send(token);
             
         } catch (error) {
             next(error)
