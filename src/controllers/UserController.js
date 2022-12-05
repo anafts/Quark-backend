@@ -7,7 +7,7 @@ module.exports = {
     async login (req, res, next) {
 
         try {
-
+            
             const { email, password } = req.body;
 
             const user = await knex('users')
